@@ -1,0 +1,1117 @@
+************* APITokenPermissionGroups: 223 ***************
+  *** group: 0 ***
+  ID:   0cc3a61731504c89b99ec1be78b77aa0
+  Name: API Tokens Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 1 ***
+  ID:   686d18d5ac6c441c867cbf6771e58a0a
+  Name: API Tokens Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 2 ***
+  ID:   eb258a38ea634c86a0c89da6b27cb6b6
+  Name: Access: Apps and Policies Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 3 ***
+  ID:   7ea222f6d5064cfa89ea366d7c1fee89
+  Name: Access: Apps and Policies Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 4 ***
+  ID:   6db4e222e21248ac96a3f4c2a81e3b41
+  Name: Access: Apps and Policies Revoke
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 5 ***
+  ID:   6c9d1cfcfc6840a987d1b5bfb880a841
+  Name: Access: Apps and Policies Revoke
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 6 ***
+  ID:   959972745952452f8be2452be8cbb9f2
+  Name: Access: Apps and Policies Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 7 ***
+  ID:   1e13c5124ca64b72b1969a67e8829049
+  Name: Access: Apps and Policies Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 8 ***
+  ID:   b05b28e839c54467a7d6cba5d3abb5a3
+  Name: Access: Audit Logs Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 9 ***
+  ID:   4f3196a5c95747b6ad82e34e1d0a694f
+  Name: Access: Certificates Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 10 ***
+  ID:   29d3afbfd4054af9accdd1118815ed05
+  Name: Access: Certificates Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 11 ***
+  ID:   08e61dabe81a422dab0dea6fdef1a98a
+  Name: Access: Custom Page Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 12 ***
+  ID:   4e5fd8ac327b4a358e48c66fcbeb856d
+  Name: Access: Custom Page Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 13 ***
+  ID:   0f4841f80adb4bada5a09493300e7f8d
+  Name: Access: Device Posture Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 14 ***
+  ID:   2fc1072ee6b743828db668fcb3f9dee7
+  Name: Access: Device Posture Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 15 ***
+  ID:   26bc23f853634eb4bff59983b9064fde
+  Name: Access: Organizations, Identity Providers, and Groups Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 16 ***
+  ID:   7121a0c7e9ed46e3829f9cca2bb572aa
+  Name: Access: Organizations, Identity Providers, and Groups Revoke
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 17 ***
+  ID:   bfe0d8686a584fa680f4c53b5eb0de6d
+  Name: Access: Organizations, Identity Providers, and Groups Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 18 ***
+  ID:   de99c87e48d642ce8c985d027905b475
+  Name: Access: Population Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 19 ***
+  ID:   bc783549a3a741aaa10556faf8b485bb
+  Name: Access: Population Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 20 ***
+  ID:   99ff99e4e30247a99d3777a8c4c18541
+  Name: Access: SSH Auditing CA Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 21 ***
+  ID:   d30c9ad8b5224e7cb8d41bcb4757effc
+  Name: Access: SSH Auditing CA Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 22 ***
+  ID:   91f7ce32fa614d73b7e1fc8f0e78582b
+  Name: Access: Service Tokens Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 23 ***
+  ID:   a1c0fec57cf94af79479a6d827fa518c
+  Name: Access: Service Tokens Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 24 ***
+  ID:   5e5d3e8efeec49f3afb67bafecbcd511
+  Name: Account API Gateway
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 25 ***
+  ID:   05a2a65760a546439ed29762b163cece
+  Name: Account API Gateway Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 26 ***
+  ID:   eb56a6953c034b9d97dd838155666f06
+  Name: Account API Tokens Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 27 ***
+  ID:   5bc3f8b21c554832afc660159ab75fa4
+  Name: Account API Tokens Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 28 ***
+  ID:   b89a480218d04ceb98b4fe57ca29dc1f
+  Name: Account Analytics Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 29 ***
+  ID:   c57ea647ef654b47bc8944fa739b570d
+  Name: Account Custom Pages Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 30 ***
+  ID:   8a9d35a7c8504208ad5c3e8d58e6162d
+  Name: Account Custom Pages Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 31 ***
+  ID:   de7a688cc47d43bd9ea700b467a09c96
+  Name: Account Firewall Access Rules Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 32 ***
+  ID:   a416acf9ef5a4af19fb11ed3b96b1fe6
+  Name: Account Firewall Access Rules Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 33 ***
+  ID:   4f1071168de8466e9808de86febfc516
+  Name: Account Rule Lists Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 34 ***
+  ID:   2edbf20661fd4661b0fe10e9e12f485c
+  Name: Account Rule Lists Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 35 ***
+  ID:   fb39996ee9044d2a8725921e02744b39
+  Name: Account Rulesets Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 36 ***
+  ID:   56907406c3d548ed902070ec4df0e328
+  Name: Account Rulesets Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 37 ***
+  ID:   c1fde68c7bcc44588cbb6ddbc16d6480
+  Name: Account Settings Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 38 ***
+  ID:   1af1fa2adc104452b74a9a3364202f20
+  Name: Account Settings Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 39 ***
+  ID:   56b2af4817c84ad99187911dc3986c23
+  Name: Account WAF Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 40 ***
+  ID:   cde8c82463b6414ca06e46b9633f52a6
+  Name: Account WAF Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 41 ***
+  ID:   a7a233f9604845c787d4c8c39ac09c21
+  Name: Account: SSL and Certificates Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 42 ***
+  ID:   db37e5f1cb1a4e1aabaef8deaea43575
+  Name: Account: SSL and Certificates Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 43 ***
+  ID:   d07270cea5484b08ad6440c985af2148
+  Name: Address Maps Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 44 ***
+  ID:   6ffe7f4299db4d4cb54f64e0eb12a456
+  Name: Address Maps Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 45 ***
+  ID:   f3604047d46144d2a3e9cf4ac99d7f16
+  Name: Allow Request Tracer Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 46 ***
+  ID:   9c88f9c5bce24ce7af9a958ba9c504db
+  Name: Analytics Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 47 ***
+  ID:   094547ab6e77498c8c4dfa87fadd5c51
+  Name: Apps Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 48 ***
+  ID:   efea2ab8357b47888938f101ae5e053f
+  Name: Argo Tunnel Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 49 ***
+  ID:   c07321b023e944ff818fec44d8203567
+  Name: Argo Tunnel Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 50 ***
+  ID:   7cf72faf220841aabcfdfab81c43c4f6
+  Name: Billing Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 51 ***
+  ID:   6c80e02421494afc9ae14414ed442632
+  Name: Billing Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 52 ***
+  ID:   51be404b56244056868226263a44a632
+  Name: Bot Management Feedback Report Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 53 ***
+  ID:   2002629aaff0454085bf5a201ed70a72
+  Name: Bot Management Feedback Report Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 54 ***
+  ID:   07bea2220b2343fa9fae15656c0d8e88
+  Name: Bot Management Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 55 ***
+  ID:   3b94c49258ec4573b06d51d99b6416c0
+  Name: Bot Management Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 56 ***
+  ID:   e17beae8b8cb423a99b1730f21238bed
+  Name: Cache Purge
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 57 ***
+  ID:   3245da1cf36c45c3847bb9b483c62f97
+  Name: Cache Settings Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 58 ***
+  ID:   9ff81cbbe65c400b97d92c3c1033cab6
+  Name: Cache Settings Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 59 ***
+  ID:   9ade9cfc8f8949bcb2371be2f0ec8db1
+  Name: China Network Steering Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 60 ***
+  ID:   c6f6338ceae545d0b90daaa1fed855e6
+  Name: China Network Steering Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 61 ***
+  ID:   65ec50cbde3d4c838bbe7500024d5745
+  Name: Cloudchamber Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 62 ***
+  ID:   26ce6c7d18a346528e7b905d5e269866
+  Name: Cloudchamber Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 63 ***
+  ID:   a92d2450e05d4e7bb7d0a64968f83d11
+  Name: Cloudflare AI Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 64 ***
+  ID:   3a1e1ef09dd34271bb44fc4c6a419952
+  Name: Cloudflare DEX
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 65 ***
+  ID:   3b376e0aa52c41cbb6afc9cab945afa8
+  Name: Cloudflare DEX Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 66 ***
+  ID:   92c8dcd551cc42a6a57a54e8f8d3f3e3
+  Name: Cloudflare DEX Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 67 ***
+  ID:   07cf1c1952a84b13b2cd542f3d2f29ab
+  Name: Cloudflare One Connectors Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 68 ***
+  ID:   a7030c9c98d544e092d8b099fabb1f06
+  Name: Cloudflare One Connectors Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 69 ***
+  ID:   4f1276d1e7e34c32a5012bbe02ece86d
+  Name: Cloudflare One Networks Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 70 ***
+  ID:   e2980d9241cf4939bbbd74fdc43b9651
+  Name: Cloudflare One Networks Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 71 ***
+  ID:   1cd960c063a0448481343372c963d8c7
+  Name: Cloudflare One Warp Connectors Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 72 ***
+  ID:   5b5c774a5d174ca88d046c8889648b3f
+  Name: Cloudflare One Warp Connectors Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 73 ***
+  ID:   c1968d31028d4239976ec3bc4750bbf6
+  Name: Cloudflare One cloudflared Connectors Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 74 ***
+  ID:   037b9e348b3b42d4b46ea2fcb1cfb3e7
+  Name: Cloudflare One cloudflared Connectors Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 75 ***
+  ID:   20e5ea084b2f491c86b8d8d90abff905
+  Name: Config Settings Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 76 ***
+  ID:   06f0526e6e464647bd61b63c54935235
+  Name: Config Settings Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 77 ***
+  ID:   eeffa4d16812430cb4a0ae9e7f46fc24
+  Name: Constellation Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 78 ***
+  ID:   7c81856725af47ce89a790d5fb36f362
+  Name: Constellation Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 79 ***
+  ID:   a2b55cd504d44ef18b7ba6a7f2b8fbb1
+  Name: Custom Errors Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 80 ***
+  ID:   a9dba34cf5814d4ab2007b4ada0045bd
+  Name: Custom Errors Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 81 ***
+  ID:   a2431ca73b7d41f99c53303027392586
+  Name: Custom Pages Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 82 ***
+  ID:   c244ec076974430a88bda1cdd992d0d9
+  Name: Custom Pages Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 83 ***
+  ID:   192192df92ee43ac90f2aeeffce67e35
+  Name: D1 Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 84 ***
+  ID:   09b2857d1c31407795e75e3fed8617a1
+  Name: D1 Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 85 ***
+  ID:   af1c363c35ba45b9a8c682ae50eb3f99
+  Name: DDoS Protection Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 86 ***
+  ID:   d44ed14bcc4340b194d3824d60edad3f
+  Name: DDoS Protection Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 87 ***
+  ID:   5f48a472240a4b489a21d43bd19a06e1
+  Name: DNS Firewall Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 88 ***
+  ID:   da6d2d6f2ec8442eaadda60d13f42bca
+  Name: DNS Firewall Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 89 ***
+  ID:   82e64a83756745bbbb1c9c2701bf816b
+  Name: DNS Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 90 ***
+  ID:   4755a26eedb94da69e1066d98aa820be
+  Name: DNS Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 91 ***
+  ID:   e199d584e69344eba202452019deafe3
+  Name: Disable ESC Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 92 ***
+  ID:   29eefa0805f94fdfae2b058b5b52f319
+  Name: Disable ESC Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 93 ***
+  ID:   9110d9dd749e464fb9f3961a2064efc5
+  Name: Disable ESC Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 94 ***
+  ID:   18555e39c5ba40d284dde87eda845a90
+  Name: Disable ESC Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 95 ***
+  ID:   f0235726de25444a84f704b7c93afadf
+  Name: Domain API Gateway
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 96 ***
+  ID:   6ced5d0d69b1422396909a62c38ab41b
+  Name: Domain API Gateway Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 97 ***
+  ID:   6134079371904d8ebd77931c8ca07e50
+  Name: Domain Page Shield
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 98 ***
+  ID:   945315185a8f40518bf3e9e6d0bee126
+  Name: Domain Page Shield Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 99 ***
+  ID:   d8e12db741544d1586ec1d6f5d3c7786
+  Name: Dynamic URL Redirects Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 100 ***
+  ID:   74e1036f577a48528b78d2413b40538d
+  Name: Dynamic URL Redirects Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 101 ***
+  ID:   5272e56105d04b5897466995b9bd4643
+  Name: Email Routing Addresses Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 102 ***
+  ID:   e4589eb09e63436686cd64252a3aebeb
+  Name: Email Routing Addresses Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 103 ***
+  ID:   1b600d9d8062443e986a973f097e728a
+  Name: Email Routing Rules Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 104 ***
+  ID:   79b3ec0d10ce4148a8f8bdc0cc5f97f2
+  Name: Email Routing Rules Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 105 ***
+  ID:   1047880d37b649b49db4a504a245896f
+  Name: Email Security DMARC Reports Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 106 ***
+  ID:   2eee71c9364c4cacaf469e8370f09056
+  Name: Email Security DMARC Reports Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 107 ***
+  ID:   4ec32dfcb35641c5bb32d5ef1ab963b4
+  Name: Firewall Services Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 108 ***
+  ID:   43137f8d07884d3198dc0ee77ca6e79b
+  Name: Firewall Services Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 109 ***
+  ID:   0d24e472a9654642a97df736e8b0d980
+  Name: Fraud Detection Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 110 ***
+  ID:   685f9605fd4e44ec937b6a0db658e629
+  Name: Fraud Detection Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 111 ***
+  ID:   6b60a5a87cae475da7e76e77e4209dd5
+  Name: HTTP Applications Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 112 ***
+  ID:   4736c02a9f224c8196ae5b127beae78c
+  Name: HTTP Applications Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 113 ***
+  ID:   c49f8d15f9f44885a544d945ef5aa6ae
+  Name: HTTP DDoS Managed Ruleset Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 114 ***
+  ID:   b88a3aa889474524bccea5cf18f122bf
+  Name: HTTP DDoS Managed Ruleset Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 115 ***
+  ID:   fac65912d42144aa86b7dd33281bf79e
+  Name: Health Checks Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 116 ***
+  ID:   e0dc25a0fbdf4286b1ea100e3256b0e3
+  Name: Health Checks Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 117 ***
+  ID:   4d62ccf834df44808bc9283d65c4e4e9
+  Name: Hyperdrive Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 118 ***
+  ID:   721b2f51fba74871bd361de65aeb7e03
+  Name: Hyperdrive Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 119 ***
+  ID:   212c9ff247b9406d990c017482afb3a5
+  Name: IOT Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 120 ***
+  ID:   865ebd55bc6d4b109de6813eccfefd13
+  Name: IOT Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 121 ***
+  ID:   e763fae6ee95443b8f56f19213c5f2a5
+  Name: IP Prefixes: BGP On Demand Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 122 ***
+  ID:   2ae23e4939d54074b7d252d27ce75a77
+  Name: IP Prefixes: BGP On Demand Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 123 ***
+  ID:   27beb7f8333b41e2b946f0e23cd8091e
+  Name: IP Prefixes: Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 124 ***
+  ID:   92b8234e99f64e05bbbc59e1dc0f76b6
+  Name: IP Prefixes: Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 125 ***
+  ID:   0cf6473ad41449e7b7b743d14fc20c60
+  Name: Images Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 126 ***
+  ID:   618ec6c64a3a42f8b08bdcb147ded4e4
+  Name: Images Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 127 ***
+  ID:   df1577df30ee46268f9470952d7b0cdf
+  Name: Intel Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 128 ***
+  ID:   92209474242d459690e2cdb1985eaa6c
+  Name: Intel Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 129 ***
+  ID:   4657621393f94f83b8ef94adba382e48
+  Name: L4 DDoS Managed Ruleset Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 130 ***
+  ID:   7a4c3574054a4d0ba7c692893ba8bdd4
+  Name: L4 DDoS Managed Ruleset Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 131 ***
+  ID:   e9a975f628014f1d85b723993116f7d5
+  Name: Load Balancers Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 132 ***
+  ID:   6d7f2f5f5b1d4a0e9081fdc98d432fd1
+  Name: Load Balancers Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 133 ***
+  ID:   9d24387c6e8544e2bc4024a03991339f
+  Name: Load Balancing: Monitors and Pools Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 134 ***
+  ID:   d2a1802cc9a34e30852f8b33869b2f3c
+  Name: Load Balancing: Monitors and Pools Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 135 ***
+  ID:   6a315a56f18441e59ed03352369ae956
+  Name: Logs Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 136 ***
+  ID:   c4a30cd58c5d42619c86a3c36c441e2d
+  Name: Logs Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 137 ***
+  ID:   96163bd1b0784f62b3e44ed8c2ab1eb6
+  Name: Logs Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 138 ***
+  ID:   3e0b5820118e47f3922f7c989e673882
+  Name: Logs Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 139 ***
+  ID:   3a46c728a0a040d5a65cd8e2f3bc6935
+  Name: Magic Firewall Packet Captures - Read PCAPs API
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 140 ***
+  ID:   4ea7d6421801452dbf07cef853a5ef39
+  Name: Magic Firewall Packet Captures - Write PCAPs API
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 141 ***
+  ID:   02b71f12bb0748e9af8126494e181342
+  Name: Magic Firewall Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 142 ***
+  ID:   8bd1dac84d3d43e7bfb43145f010a15c
+  Name: Magic Firewall Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 143 ***
+  ID:   8e6ed1ef6e864ad0ae477ceffa5aa5eb
+  Name: Magic Network Monitoring Admin
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 144 ***
+  ID:   3d85e9514f944bb4912c5871d92e5af5
+  Name: Magic Network Monitoring Config Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 145 ***
+  ID:   09c77baecb6341a2b1ca2c62b658d290
+  Name: Magic Network Monitoring Config Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 146 ***
+  ID:   967ecf860a244dd1911a0331a0af582a
+  Name: Magic Transit Prefix Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 147 ***
+  ID:   0bc09a3cd4b54605990df4e307f138e1
+  Name: Magic Transit Prefix Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 148 ***
+  ID:   319f5059d33a410da0fac4d35a716157
+  Name: Managed headers Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 149 ***
+  ID:   0fd9d56bc2da43ad8ea22d610dd8cab1
+  Name: Managed headers Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 150 ***
+  ID:   429a068902904c5a9ed9fc267c67da9a
+  Name: Mass URL Redirects Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 151 ***
+  ID:   abe78e2276664f4db588c1f675a77486
+  Name: Mass URL Redirects Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 152 ***
+  ID:   3518d0f75557482e952c6762d3e64903
+  Name: Memberships Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 153 ***
+  ID:   9201bc6f42d440968aaab0c6f17ebb1d
+  Name: Memberships Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 154 ***
+  ID:   ce18edbdcebf465e9d6d1d2fc80ffd42
+  Name: Notifications Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 155 ***
+  ID:   c3c847c5802d4ce3ba00e3e97b3c8555
+  Name: Notifications Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 156 ***
+  ID:   7b32a91ece3140d4b3c2c56f23fc8e35
+  Name: Origin Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 157 ***
+  ID:   a4308c6855c84eb2873e01b6cc85cbb3
+  Name: Origin Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 158 ***
+  ID:   b415b70a4fd1412886f164451f20405c
+  Name: Page Rules Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 159 ***
+  ID:   ed07f6c337da4195b4e72a1fb2c6bcae
+  Name: Page Rules Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 160 ***
+  ID:   440e6958bcc947329f8d56328d7322ce
+  Name: Page Shield
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 161 ***
+  ID:   050531528b044d58bbb71666fef7c07c
+  Name: Page Shield Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 162 ***
+  ID:   87065285ab38463481e72815eefd18c3
+  Name: Page Shield Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 163 ***
+  ID:   e247aedd66bd41cc9193af0213416666
+  Name: Pages Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 164 ***
+  ID:   8d28297797f24fb8a0c332fe0866ec89
+  Name: Pages Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 165 ***
+  ID:   fd7f886c75a244389e892c4c3c068292
+  Name: Pubsub Configuration Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 166 ***
+  ID:   910b6ecca1c5411bb894e787362d1312
+  Name: Pubsub Configuration Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 167 ***
+  ID:   93ae59e7a40c4287a57ff6e501186a63
+  Name: Response Compression Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 168 ***
+  ID:   4bd3fb513a23494aa1341a7e1eb6e080
+  Name: Response Compression Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 169 ***
+  ID:   58abbad6d2ce40abb2594fbe932a2e0e
+  Name: Rule Policies Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 170 ***
+  ID:   61ddc58f1da14f95b33b41213360cbeb
+  Name: Rule Policies Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 171 ***
+  ID:   7b7216b327b04b8fbc8f524e1f9b7531
+  Name: SSL and Certificates Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 172 ***
+  ID:   c03055bc037c4ea9afb9a9f104b7b721
+  Name: SSL and Certificates Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 173 ***
+  ID:   853643ed57244ed1a05a7c024af9ab5a
+  Name: Sanitize Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 174 ***
+  ID:   89bb8c37d46042e98b84560eaaa6379f
+  Name: Sanitize Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 175 ***
+  ID:   595409c54a24444b80a495620b2d614c
+  Name: Select Configuration Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 176 ***
+  ID:   235eac9bb64942b49cb805cc851cb000
+  Name: Select Configuration Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 177 ***
+  ID:   74c654eb4aac40e28d6c6caa4c5aeb3d
+  Name: Snippets Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 178 ***
+  ID:   dadeaf3abdf14126a77a35e0c92fc36e
+  Name: Snippets Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 179 ***
+  ID:   de21485a24744b76a004aa153898f7fe
+  Name: Stream Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 180 ***
+  ID:   714f9c13a5684c2885a793f5edb36f59
+  Name: Stream Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 181 ***
+  ID:   3f376c8e6f764a938b848bd01c8995c4
+  Name: Teams Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 182 ***
+  ID:   efb81b5cd37d49f3be1da9363a6d7a19
+  Name: Teams Report
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 183 ***
+  ID:   b33f02c6f7284e05a6f20741c0bb0567
+  Name: Teams Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 184 ***
+  ID:   a9a99455bf3245f6a5a244f909d74830
+  Name: Transform Rules Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 185 ***
+  ID:   ae16e88bc7814753a1894c7ce187ab72
+  Name: Transform Rules Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 186 ***
+  ID:   5d78fd7895974fd0bdbbbb079482721b
+  Name: Turnstile Sites Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 187 ***
+  ID:   755c05aa014b4f9ab263aa80b8167bd8
+  Name: Turnstile Sites Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 188 ***
+  ID:   5d613a610b294788a29572aaac2f254d
+  Name: URL Scanner Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 189 ***
+  ID:   2a400bcb29154daab509fe07e3facab0
+  Name: URL Scanner Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 190 ***
+  ID:   8acbe5bb0d54464ab867149d7f7cf8ac
+  Name: User Details Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 191 ***
+  ID:   55a5e17cc99e4a3fa1f3432d262f2e55
+  Name: User Details Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.user
+  *** group: 192 ***
+  ID:   1799edaae5db489294430e20d9b519e0
+  Name: Vectorize Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 193 ***
+  ID:   64156ba5be47441096c83c7fc17c488b
+  Name: Vectorize Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 194 ***
+  ID:   cab5202d07ef47beae788e6bc95cb6fe
+  Name: Waiting Rooms Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 195 ***
+  ID:   24fc124dc8254e0db468e60bf410c800
+  Name: Waiting Rooms Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 196 ***
+  ID:   8e31f574901c42e8ad89140b28d42112
+  Name: Web3 Hostnames Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 197 ***
+  ID:   5ea6da42edb34811a78d1b007557c0ca
+  Name: Web3 Hostnames Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 198 ***
+  ID:   8b47d2786a534c08a1f94ee8f9f599ef
+  Name: Workers KV Storage Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 199 ***
+  ID:   f7f0eda5697f475c90846e879bab8666
+  Name: Workers KV Storage Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 200 ***
+  ID:   6a018a9f2fc74eb6b293b0c548f38b39
+  Name: Workers R2 Storage Bucket Item Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.edge.r2.bucket
+  *** group: 201 ***
+  ID:   2efd5506f9c8494dacb1fa10a3e7d5b6
+  Name: Workers R2 Storage Bucket Item Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.edge.r2.bucket
+  *** group: 202 ***
+  ID:   b4992e1108244f5d8bfbd5744320c2e1
+  Name: Workers R2 Storage Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 203 ***
+  ID:   bf7481a1826f439697cb59a20b22293e
+  Name: Workers R2 Storage Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 204 ***
+  ID:   2072033d694d415a936eaeb94e6405b8
+  Name: Workers Routes Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 205 ***
+  ID:   28f4b596e7d643029c524985477ae49a
+  Name: Workers Routes Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 206 ***
+  ID:   1a71c399035b4950a1bd1466bbe4f420
+  Name: Workers Scripts Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 207 ***
+  ID:   e086da7e2179491d91ee5f35b3ca210a
+  Name: Workers Scripts Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 208 ***
+  ID:   05880cd1bdc24d8bae0be2136972816b
+  Name: Workers Tail Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 209 ***
+  ID:   cdeb15b336e640a2965df8c65052f1e0
+  Name: Zaraz Admin
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 210 ***
+  ID:   89d5bf002389496e9994b8c30608b5d0
+  Name: Zaraz Edit
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 211 ***
+  ID:   5bdbde7e76144204a244274eac3eb0eb
+  Name: Zaraz Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 212 ***
+  ID:   a1a6298e52584c8fb6313760a30c681e
+  Name: Zero Trust: Seats Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account
+  *** group: 213 ***
+  ID:   c8fed203ed3043cba015a93ad1616f1f
+  Name: Zone Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 214 ***
+  ID:   517b21aee92c4d89936c976ba6e4be55
+  Name: Zone Settings Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 215 ***
+  ID:   3030687196b94b638145a3953da2b699
+  Name: Zone Settings Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 216 ***
+  ID:   211a4c0feb3e43b3a2d41f1443a433e7
+  Name: Zone Transform Rules Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 217 ***
+  ID:   0ac90a90249747bca6b047d97f0803e9
+  Name: Zone Transform Rules Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 218 ***
+  ID:   1b1ea24cf0904d33903f0cc7e54e280f
+  Name: Zone Versioning Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 219 ***
+  ID:   c9915d86fbff46af9dd945c0a882294b
+  Name: Zone Versioning Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 220 ***
+  ID:   dbc512b354774852af2b5a5f4ba3d470
+  Name: Zone WAF Read
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 221 ***
+  ID:   fb6778dc191143babbfaa57993f1d275
+  Name: Zone WAF Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+  *** group: 222 ***
+  ID:   e6d2666161e84845a636613608cee8d5
+  Name: Zone Write
+  Scopes [1]
+    Scope[0]: com.cloudflare.api.account.zone
+************ End APITokenPermissionGroups ****************
