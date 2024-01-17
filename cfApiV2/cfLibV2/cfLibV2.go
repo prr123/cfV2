@@ -215,6 +215,53 @@ func AddDnsChalRecord(zoneId, val, token string)(recId string, err error) {
 	return dnsRec.ID, nil
 }
 
+func UpdDnsRecord(param *cloudflare.UpdateDNSRecordParams, token string)(recId string, err error) {
+
+/*
+
+type UpdateDNSRecordParams struct {
+	Type     string      `json:"type,omitempty"`
+	Name     string      `json:"name,omitempty"`
+	Content  string      `json:"content,omitempty"`
+	Data     interface{} `json:"data,omitempty"` // data for: SRV, LOC
+	ID       string      `json:"-"`
+	Priority *uint16     `json:"priority,omitempty"`
+	TTL      int         `json:"ttl,omitempty"`
+	Proxied  *bool       `json:"proxied,omitempty"`
+	Comment  *string     `json:"comment,omitempty"` // nil will keep the current comment, while StringPtr("") will empty it
+	Tags     []string    `json:"tags"`
+}
+
+*/
+	if len(token) == 0 {return "", fmt.Errorf("no token supplied")}
+//	if len(zoneId) == 0 {return "", fmt.Errorf("no zoneId supplied")}
+
+	if len(param.Type) == 0 {return "", fmt.Errorf("param Type missing!")}
+	if len(param.Name) == 0 {return "", fmt.Errorf("param Name missing!")}
+	if len(param.Content) == 0 {return "", fmt.Errorf("param Content missing!")}
+	if len(param.ID) == 0 {return "", fmt.Errorf("param ID missing!")}
+
+
+	// token  is Token.Value
+   	api, err := cloudflare.NewWithAPIToken(token)
+    if err != nil {return "", fmt.Errorf("initiating api obj: %v",err)}
+
+    ctx := context.Background()
+
+
+    rc := cloudflare.ResourceContainer{
+        Level: cloudflare.ZoneRouteLevel,
+//        Identifier: zoneId,
+        Identifier: param.ID,
+    }
+
+	dnsRec, err := api.UpdateDNSRecord(ctx, &rc, *param)
+	if err != nil {return "", fmt.Errorf("UpdateDnsRec: %v", err)}
+
+	return dnsRec.ID, nil
+}
+
+
 func DelDnsRecord(zoneId, recId, token string) (err error) {
 
 	if len(token) == 0 {return fmt.Errorf("no token supplied")}

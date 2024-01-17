@@ -100,9 +100,11 @@ func main() {
 	err = json.Unmarshal(bdat, &DnsTok)
 	if err != nil {log.Fatalf("error -- unMarshal token string: %v\n", err)}
 
-    key := "bc7d4aef3af4c6968e641c656e1771e00a0df"
-    api, err := cloudflare.New(key, "azulsoftwarevlc@gmail.com")
-    if err != nil {log.Fatalf("error -- generating api obj: %v\n",err)}
+	key:= os.Getenv("cfApi")
+	if len(key) == 0 {log.Fatalf("error -- no valid key!")}
+
+	api, err := cloudflare.New(key, "azulsoftwarevlc@gmail.com")
+	if err != nil {log.Fatalf("error -- generating api obj: %v\n",err)}
 
     // Most API calls require a Context
     ctx := context.Background()

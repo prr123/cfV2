@@ -109,6 +109,7 @@ func main() {
         Identifier: zoneId,
     }
 
+	// https://pkg.go.dev/github.com/cloudflare/cloudflare-go#ListDNSRecordsParams
     DnsPars:=cloudflare.ListDNSRecordsParams{}
 
     dnsRecs, _, err := api.ListDNSRecords(ctx, &rc, DnsPars)

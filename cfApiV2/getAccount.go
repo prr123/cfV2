@@ -64,7 +64,9 @@ func main() {
 		log.Printf("debug -- debug: %t\n", dbg)
 	}
 
-    key := "bc7d4aef3af4c6968e641c656e1771e00a0df"
+	key := os.Getenv("cfApi")
+	if len(key) == 0 {log.Fatalf("error -- not a valid key!")}
+
     api, err := cloudflare.New(key, "azulsoftwarevlc@gmail.com")
     if err != nil {log.Fatalf("error generating api obj: %v\n",err)}
 

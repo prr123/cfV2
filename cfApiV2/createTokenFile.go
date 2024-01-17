@@ -109,7 +109,9 @@ func main() {
 
 	tokId := tokResp.ID
 
-    key := "bc7d4aef3af4c6968e641c656e1771e00a0df"
+	key := os.Getenv("cfApi")
+	if len(key) == 0 {log.Fatalf("error -- cannot retrieve env var!")}
+
 	napi, err := cloudflare.New(key, "azulsoftwarevlc@gmail.com")
     if err != nil {log.Fatalf("error generating napi obj: %v\n",err)}
 	if dbg {log.Printf("info -- created api from key!\n")}
