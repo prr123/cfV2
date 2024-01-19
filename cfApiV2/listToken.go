@@ -3,7 +3,7 @@
 // Date 12 Jan 2024
 // copyright (c) 2024 prr, azul software
 //
-// usage updToken /
+// usage listToken /
 //
 
 
@@ -68,8 +68,6 @@ func main() {
 	// Most API calls require a Context
 	ctx := context.Background()
 //	apiobj := apiObj.ApiObj
-
-	if dbg {fmt.Println("********************************************")}
 
 	TokList, err := api.APITokens(ctx)
 	if err != nil {log.Fatalf("error -- cannot get ApiTokens: %v\n", err)}

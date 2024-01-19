@@ -7,6 +7,9 @@
 // updated 16 Jan
 // - logs started wiith error, debug, info
 //
+// 18 Jan
+// read environmental var cfDir
+//
 
 package main
 
@@ -16,7 +19,7 @@ import (
 	"log"
 	"os"
 	"time"
-//	"strings"
+	"strings"
 
 	cfLib "ns/cfApiV2/cfLibV2"
 
@@ -30,7 +33,7 @@ func main() {
 
     numArgs := len(os.Args)
 
-	useStr := "./updToken /token=[dns|zones] [/dbg]"
+	useStr := "./updToken /token=[dnsread|dnswrite|zones] [/opt=opt.yaml] [/vfy] [/dbg]"
 	helpStr := "this program creates a new  token with the ability to change Dns records or list zones"
 
 	if numArgs == 2 && os.Args[1] == "help" {
@@ -45,57 +48,99 @@ func main() {
 		os.Exit(1)
 	}
 
-    flags := []string{"token","dbg"}
+    flags := []string{"token","opt", "vfy", "dbg"}
     flagMap, err := util.ParseFlags(os.Args, flags)
     if err != nil {
-        log.Fatalf("error parseFlags: %v\n",err)
+        log.Fatalf("error -- parseFlags: %v\n",err)
     }
+
+	optFilnam := ""
+	optval, ok := flagMap["opt"]
+	if ok {
+		if optval.(string) == "none" {
+			log.Fatalf("error -- /opt flag value is missing!\n")
+		}
+		if idx := strings.Index(optval.(string), "."); idx > -1 {
+			log.Fatalf("error -- opt value has extension!\n")
+		}
+		optFilnam = optval.(string) + ".yaml"
+	}
+
 
 	token := ""
 	tokval, ok := flagMap["token"]
 	if !ok {
-		log.Fatalf("/token flag is missing!")
+		log.Fatalf("error -- /token flag is missing!\n")
 	}
 	switch tokval.(string) {
 		case "none":
-			log.Fatalf("token value not provided!")
-		case "dns", "zones":
+			log.Fatalf("error -- token value not provided!\n")
+		case "dnsread", "dnswrite", "zones":
 			token, _ = tokval.(string)
 		default:
-			log.Fatalf("invalid token: %s!", tokval.(string))
+			log.Fatalf("error -- invalid token: %s!\n", tokval.(string))
 	}
 
 	dbg:= false
 	_, ok = flagMap["dbg"]
-	if ok {
-		dbg = true
-	}
+	if ok {	dbg = true}
 
+	vfy:= false
+	_, ok = flagMap["vfy"]
+	if ok {vfy = true}
 
     cfDir := ""
+	cfDir = os.Getenv("cfDir")
+	if len(cfDir) == 0 {log.Fatalf("error -- cannot read env var cfDir!")}
+
 	tokFilnam := ""
 	switch token {
-		case "dns":
+		case "dnsread":
+			tokFilnam = "DnsRead.json"
+		case "dnswrite":
 			tokFilnam = "DnsWrite.json"
 		case "zones":
 			tokFilnam = "ZonesList.json"
 		default:
-			log.Fatalf("invalid token: %s!\n", token)
+			log.Fatalf("error -- invalid token: %s!\n", token)
 	}
 
-    nTokFilnam := cfDir + "token/" + tokFilnam
+    nTokFilnam := cfDir + "/token/" + tokFilnam
+	nOptFilnam :=""
 
-	if dbg {
-		log.Printf("token file: %s\n", nTokFilnam)
-		log.Printf("token:      %s\n", token)
+//.Format("2005-12-30T01:02:03Z")
+	timopt := cfLib.TokOpt{
+		Start: time.Now().UTC().Round(time.Second),
+		End: time.Now().UTC().AddDate(0,0,7).Round(time.Second),
 	}
 
+	timOpt := cfLib.TokOpt{}
+	timOpt.Start = timopt.Start
+//	timOpt.Start = time.Date(timopt.Start.Year(), timopt.Start.Month(), timopt.Start.Day(), 0,0,0,0, timopt.Start.Location())
+	timOpt.End = time.Date(timopt.End.Year(), timopt.End.Month(), timopt.End.Day(), 0,0,0,0, timopt.End.Location())
+
+	if len(optFilnam) > 0 {
+		nOptFilnam = cfDir + "/token/" + optFilnam
+		timOpt, err = cfLib.GetTokOpt(nOptFilnam)
+		if err != nil {log.Fatalf("error -- GetTokOpt: %v\n", err)}
+	}
+
+	log.Printf("info -- token file: %s\n", nTokFilnam)
+	log.Printf("info -- token:      %s\n", token)
+	log.Printf("info -- opt file:   %s\n", nOptFilnam)
+	log.Printf("info -- opt:        %s\n", optFilnam)
+	log.Printf("info -- debug:      %t\n", dbg)
+	log.Printf("info -- vfy:        %t\n", vfy)
+	log.Printf("debug -- start: %s\n", timOpt.Start)
+	log.Printf("debug -- end:   %s\n", timOpt.End)
+
+	os.Exit(0)
 	key := os.Getenv("cfApi")
 	if len(key) == 0 {log.Fatalf("error -- not a valid key!")}
 	if dbg {log.Printf("debug -- key: %s\n", key)}
 
     api, err := cloudflare.New(key, "azulsoftwarevlc@gmail.com")
-    if err != nil {log.Fatalf("error generating api obj: %v\n",err)}
+    if err != nil {log.Fatalf("error -- generating api obj: %v\n",err)}
 
 	// Most API calls require a Context
 	ctx := context.Background()
@@ -106,10 +151,19 @@ func main() {
 	permGroups := make([]cloudflare.APITokenPermissionGroups, 1)
 
 	switch token {
-		case "dns": 
+		case "dnsread":
+			permGroup :=cloudflare.APITokenPermissionGroups {
+				ID: "82e64a83756745bbbb1c9c2701bf816b",
+				Name: "DnsRead",
+				Scopes: nil,
+			}
+
+			permGroups[0] = permGroup
+
+		case "dnswrite":
 			permGroup :=cloudflare.APITokenPermissionGroups {
 				ID: "4755a26eedb94da69e1066d98aa820be",
-				Name: "DNS Write",
+				Name: "DnsWrite",
 				Scopes: nil,
 			}
 
@@ -129,12 +183,9 @@ func main() {
 		default:
 			log.Fatalf("error -- invalid token!")
 	}
-//	actStr := "com.cloudflare.api.account." + apiObj.ApiObj.AccountId
-//	if dbg {fmt.Printf("Account: %s\n", actStr)}
 
 	res := make(map[string]interface{})
 	res["com.cloudflare.api.account.d0e0781201c0536742831e308ce406fb"] = "*"
-//	res[actStr] = "*"
 
 	policy := cloudflare.APITokenPolicies{
 			Effect: "allow",
@@ -162,7 +213,6 @@ func main() {
 
 	// first we need to retrieve account
 	tok:= cloudflare.APIToken{
-		Name: "Test",
 		NotBefore: &startTime,
 		ExpiresOn: &endTime,
 		Policies: policies,
@@ -170,7 +220,9 @@ func main() {
 	}
 
 	switch token {
-	 case "dns":
+	 case "dnsread":
+		tok.Name = "DnsRead"
+	 case "dnswrite":
 		tok.Name = "DnsWrite"
 	case "zones":
 		tok.Name = "ZonesRead"
@@ -187,14 +239,20 @@ func main() {
     err = cfLib.CreateTokFile(nTokFilnam, &NewTok, dbg)
     if err != nil {log.Fatalf("error -- CreateTokFile: %v", err) }
 
-/*
-    tokResp, err := api.VerifyAPIToken(ctx)
-    if err != nil {return fmt.Errorf("VerifyApiToken: %v", err)}
+	if !vfy {os.Exit(0)}
+
+	// test token
+
+    napi, err := cloudflare.NewWithAPIToken(NewTok.Value)
+    if err != nil {log.Fatalf("error -- initiating api obj: %v\n",err)}
+
+    tokResp, err := napi.VerifyAPIToken(ctx)
+    if err != nil {log.Fatalf("error -- VerifyApiToken: %v", err)}
 
     if dbg {cfLib.PrintTokResp(&tokResp)}
 
-    if tokResp.Status != "active" {return fmt.Errorf("invalid status returned! %s", tokResp.Status)}
-*/
+    if tokResp.Status != "active" {log.Fatalf("error -- invalid status returned! %s\n", tokResp.Status)}
+
 	log.Printf("info -- success creating Dns Token!")
 }
 

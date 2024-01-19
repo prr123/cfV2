@@ -32,7 +32,9 @@ The yaml file is a list of all zone records managed by cloudflare
 usage: /listPermGroups
 
 This program lists all Permission Groups of cloudflare tokens
-PermGroups are necessary for the cration of tokens.
+PermGroups are necessary for the creation of tokens.
+The output can be stored to a file by using the > operator:
+./listPermGroups > $cfDir/listPerms.txt
 
 ## createTokenFile
 

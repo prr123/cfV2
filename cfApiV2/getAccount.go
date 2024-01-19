@@ -5,6 +5,9 @@
 //
 // usage getAccount
 //
+// 19/1/2024
+// cfDir retrieve as env var
+//
 
 package main
 
@@ -29,7 +32,7 @@ func main() {
     numArgs := len(os.Args)
 
 	useStr := "[/dbg]"
-	helpStr := "this program retireves the cloudflare account info."
+	helpStr := "this program retrieves the cloudflare account info."
 
 	if numArgs == 2 && os.Args[1] == "help" {
 		fmt.Printf("help: %s\n", helpStr)
@@ -47,11 +50,13 @@ func main() {
 	flags := []string{"dbg"}
 	flagMap, err := util.ParseFlags(os.Args, flags)
 	if err != nil {
-		log.Fatalf("ParseFlags: %v\n",err)
+		log.Fatalf("error -- ParseFlags: %v\n",err)
     }
 
-    cfDir := ""
-    acntFilnam := cfDir + "zones/accountInfo.yaml"
+    cfDir := os.Getenv("cfDir")
+	if len(cfDir) == 0 {log.Fatalf("error -- cannot get env var cfDir!\n")}
+
+    acntFilnam := cfDir + "/oldAccountInfo.yaml"
 
 	dbg:= false
 	_, ok := flagMap["dbg"]
@@ -59,10 +64,8 @@ func main() {
 		dbg = true
 	}
 
-	if dbg {
-		log.Printf("debug -- accountfile:      %s\n",acntFilnam)
-		log.Printf("debug -- debug: %t\n", dbg)
-	}
+	log.Printf("info -- accountfile: %s\n",acntFilnam)
+	log.Printf("info -- debug: %t\n", dbg)
 
 	key := os.Getenv("cfApi")
 	if len(key) == 0 {log.Fatalf("error -- not a valid key!")}
@@ -77,11 +80,10 @@ func main() {
 		Name: "azulsoftware",
 	}
 	acntList, _, err := api.Accounts(ctx, acntParam)
-
-	if err != nil {log.Fatalf("error -- getting accounts!\n")}
+	if err !=nil {log.Fatalf("error -- Accounts: %v\n", err)}
 
 	if len(acntList) == 0 {log.Fatalf("error -- no account found!\n")}
-	if len(acntList) >1 {log.Fatalf("error -- multiple accounta found!\n")}
+	if len(acntList) >1 {log.Fatalf("error -- multiple accounts found!\n")}
 
 	Acnt := acntList[0]
 

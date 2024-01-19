@@ -13,11 +13,12 @@ import (
 	"context"
 	"strings"
 
-    yaml "github.com/goccy/go-yaml"
     "github.com/cloudflare/cloudflare-go"
 	json "github.com/goccy/go-json"
+    yaml "github.com/goccy/go-yaml"
 )
 
+/*
 type ApiObj struct {
     Api    string `yaml:"Api"`
     ApiKey string `yaml:"ApiKey"`
@@ -35,6 +36,16 @@ type cfApi struct {
 	API *cloudflare.API
 	ApiObj *ApiObj
 }
+*/
+
+type CfAccount struct {
+	Id string `json:"Id"`
+	Name string `json:"Name"`
+	Created time.Time `json:"Created"`
+	Email string `json:"email:"`
+}
+
+
 
 type TokList struct {
 	AccountId string `yaml:"AccountId"`
@@ -84,6 +95,49 @@ type ZoneShortJson struct {
 	Name string `json:"Name"`
 	Id string `json:"Id"`
 }
+
+type TokOpt struct {
+	Start time.Time `json:"Start"`
+	End time.Time `json:"End"`
+	Days int	`json:"Days"`
+}
+
+func GetTokOpt(filnam string) (opt TokOpt, err error) {
+
+	opt.Start = time.Now().UTC().Round(time.Second)
+	opt.End = time.Now().UTC().AddDate(0,0,7).Round(time.Second)
+
+	bdat, err := os.ReadFile(filnam)
+	if err != nil {return opt, fmt.Errorf("ReadFile: %v", err)}
+
+//	fmt.Printf("bdat: %s\n", bdat)
+
+	topt := TokOpt{}
+	err = yaml.Unmarshal(bdat, &topt)
+	if err != nil {return opt, fmt.Errorf("Unmarshal: %v", err)}
+
+/*
+	fmt.Printf("start: %s\n", topt.Start)
+	fmt.Printf("end: %s\n", topt.End)
+	fmt.Printf("days: %d\n", topt.Days)
+*/
+	if topt.Start == time.Date(1,time.Month(1),1, 0,0,0,0, opt.Start.Location()) {
+		topt.Start = opt.Start
+	} else {
+		if topt.Start.Before(time.Now()) {return topt, fmt.Errorf("start time is in the past!")}
+	}
+	if topt.End == time.Date(1,time.Month(1),1, 0,0,0,0, opt.Start.Location()) {
+		if topt.Days > 0 {topt.End = topt.Start.AddDate(0,0,topt.Days)}
+	} else {
+		topt.End = topt.Start.AddDate(0,0,1)
+	}
+
+	topt.End = time.Date(topt.End.Year(), topt.End.Month(), topt.End.Day(), 0,0,0,0, topt.End.Location())
+	if topt.End.Before(topt.Start) {return topt, fmt.Errorf("end time is before start time")}
+
+	return topt, nil
+}
+
 
 func CreateTokFile(tokFilnam string, Token *cloudflare.APIToken, dbg bool) (err error){
 
@@ -573,7 +627,7 @@ func PrintZoneList(zoneList *ZoneList){
     }
 }
 
-
+/*
 func PrintApiObj (apiObj *ApiObj) {
 
     fmt.Println("***************** Api Obj ******************")
@@ -589,6 +643,7 @@ func PrintApiObj (apiObj *ApiObj) {
     fmt.Printf("YamlFile:  %s\n", apiObj.YamlFile)
     fmt.Println("********************************************")
 }
+*/
 
 // https://github.com/cloudflare/cloudflare-go/blob/0d05fc09483641dde8abb4c64cf2f6016f590d79/user.go#L12
 func PrintUserInfo (u *cloudflare.User) {
