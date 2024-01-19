@@ -109,6 +109,7 @@ func main() {
 	for i:=0; i< len(zones); i++ {
 		acmeZones[i].Name = zones[i].Name
 		acmeZones[i].Id = zones[i].ID
+		acmeZones[i].Select = false
 	}
 
 	zoneFil, err := os.Create(zoneFilnam)
