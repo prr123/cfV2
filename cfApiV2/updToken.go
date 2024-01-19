@@ -134,7 +134,6 @@ func main() {
 	log.Printf("debug -- start: %s\n", timOpt.Start)
 	log.Printf("debug -- end:   %s\n", timOpt.End)
 
-	os.Exit(0)
 	key := os.Getenv("cfApi")
 	if len(key) == 0 {log.Fatalf("error -- not a valid key!")}
 	if dbg {log.Printf("debug -- key: %s\n", key)}
@@ -196,9 +195,11 @@ func main() {
 	policies := make([]cloudflare.APITokenPolicies, 1)
 	policies[0] = policy
 
-	startTime := time.Now().UTC().Round(time.Second)
-//.Format("2005-12-30T01:02:03Z")
-	endTime := time.Now().UTC().AddDate(0,2,0).Round(time.Second)
+//	startTime := time.Now().UTC().Round(time.Second)
+	startTime := timOpt.Start
+//	endTime := time.Now().UTC().AddDate(0,2,0).Round(time.Second)
+	endTime := timOpt.End
+
 //.Format("2005-12-30T01:02:03Z")
 
 	ipList := make([]string, 1)
@@ -239,10 +240,10 @@ func main() {
     err = cfLib.CreateTokFile(nTokFilnam, &NewTok, dbg)
     if err != nil {log.Fatalf("error -- CreateTokFile: %v", err) }
 
+	log.Printf("info -- created token file!\n")
 	if !vfy {os.Exit(0)}
 
 	// test token
-
     napi, err := cloudflare.NewWithAPIToken(NewTok.Value)
     if err != nil {log.Fatalf("error -- initiating api obj: %v\n",err)}
 
@@ -253,6 +254,6 @@ func main() {
 
     if tokResp.Status != "active" {log.Fatalf("error -- invalid status returned! %s\n", tokResp.Status)}
 
-	log.Printf("info -- success creating Dns Token!")
+	log.Printf("info -- success verifying Token!")
 }
 
