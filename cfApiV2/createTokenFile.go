@@ -71,11 +71,13 @@ func main() {
     }
 	tokNam = toknval.(string)
 
-    cfDir := ""
 	tokFilnam := tokNam
 	if idx:= strings.Index(tokNam, ".json"); idx == -1 {tokFilnam = tokNam + ".json"}
 
-    nTokFilnam := cfDir + "token/" + tokFilnam
+	cfDir := os.Getenv("cfDir")
+	if len(cfDir) == 0 {log.Fatalf("error -- cannto get env var cfDir!\n")}
+
+    nTokFilnam := cfDir + "/token/" + tokFilnam
 
 	dbg:= false
 	_, ok = flagMap["dbg"]
@@ -106,6 +108,7 @@ func main() {
     if dbg {cfLib.PrintTokResp(&tokResp)}
 
     if tokResp.Status != "active" {log.Fatalf("invalid status returned! %s", tokResp.Status)}
+	log.Printf("info -- token is verified!\n")
 
 	tokId := tokResp.ID
 
