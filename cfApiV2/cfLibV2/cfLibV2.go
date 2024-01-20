@@ -46,7 +46,6 @@ type CfAccount struct {
 }
 
 
-
 type TokList struct {
 	AccountId string `yaml:"AccountId"`
 	Name string `yaml:"Name"`
@@ -89,6 +88,7 @@ type ZoneAcme struct {
 	Id string `yaml:"Id"`
 	AcmeId string `yaml:"AcmeId"`
 	AcmeRec bool
+	Select bool `yaml:"Select"`
 }
 
 type ZoneShortJson struct {
@@ -100,6 +100,18 @@ type TokOpt struct {
 	Start time.Time `json:"Start"`
 	End time.Time `json:"End"`
 	Days int	`json:"Days"`
+}
+
+type DnsRec struct {
+	Type string `yaml:"Type"`
+	Name string	`yaml:"Name"`
+	Content string	`yaml:"Content"`
+	ID string		`yaml:"ID"`
+	CreatedOn	time.Time `yaml:"CreatedOn"`
+	ModifiedOn	time.Time `yaml:"ModifiedOn"`
+	ZoneId string	`yaml:"ZoneID"`
+	Zone string `yaml:"Zone"`
+	TTL	int		`yaml:"TTL"`
 }
 
 func GetTokOpt(filnam string) (opt TokOpt, err error) {
@@ -185,7 +197,9 @@ func ReadDnsRecord(zoneId string, token string, dnspar *cloudflare.ListDNSRecord
 }
 
 
-func AddDnsRecord(param *cloudflare.CreateDNSRecordParams, token string)(recId string, err error) {
+//func AddDnsRecord(param *cloudflare.CreateDNSRecordParams, token string)(recId string, err error) {
+
+func AddDnsRecord(rec DnsRec, token string)(mrec DnsRec, err error) {
 
 /*
 
@@ -211,18 +225,26 @@ type CreateDNSRecordParams struct {
 
 */
 
-	if len(token) == 0 {return "", fmt.Errorf("no token supplied")}
-//	if len(zoneId) == 0 {return "", fmt.Errorf("no zoneId supplied")}
+	param := cloudflare.CreateDNSRecordParams{
+		Type: rec.Type,
+		Name: rec.Name,
+		Content: rec.Content,
+		ZoneID: rec.ZoneId,
+		TTL: rec.TTL,
+	}
 
-	if len(param.Type) == 0 {return "", fmt.Errorf("param Type missing!")}
-	if len(param.Name) == 0 {return "", fmt.Errorf("param Name missing!")}
-	if len(param.Content) == 0 {return "", fmt.Errorf("param Content missing!")}
-	if len(param.ZoneID) == 0 {return "", fmt.Errorf("param ZoneID missing!")}
+	if len(token) == 0 {return mrec, fmt.Errorf("no token supplied")}
+//	if len(zoneId) == 0 {return mrec, fmt.Errorf("no zoneId supplied")}
+
+	if len(param.Type) == 0 {return mrec, fmt.Errorf("param Type missing!")}
+	if len(param.Name) == 0 {return mrec, fmt.Errorf("param Name missing!")}
+	if len(param.Content) == 0 {return mrec, fmt.Errorf("param Content missing!")}
+	if len(param.ZoneID) == 0 {return mrec, fmt.Errorf("param ZoneID missing!")}
 
 
 	// token  is Token.Value
    	api, err := cloudflare.NewWithAPIToken(token)
-    if err != nil {return "", fmt.Errorf("initiating api obj: %v",err)}
+    if err != nil {return mrec, fmt.Errorf("initiating api obj: %v",err)}
     ctx := context.Background()
 
 
@@ -232,10 +254,60 @@ type CreateDNSRecordParams struct {
         Identifier: param.ZoneID,
     }
 
-	dnsRec, err := api.CreateDNSRecord(ctx, &rc, *param)
-	if err != nil {return "", fmt.Errorf("CreateDnsREc: %v", err)}
+	cfDnsRec, err := api.CreateDNSRecord(ctx, &rc, param)
+	if err != nil {return mrec, fmt.Errorf("CreateDnsRec: %v", err)}
 
-	return dnsRec.ID, nil
+	mrec = rec
+	mrec.ID = cfDnsRec.ID
+	mrec.CreatedOn = cfDnsRec.CreatedOn
+	mrec.ModifiedOn = cfDnsRec.ModifiedOn
+
+	return mrec, nil
+}
+
+func AddDnsRecords(recList *[]DnsRec, token string)(err error) {
+
+	if len(token) == 0 {return fmt.Errorf("no token supplied")}
+	if recList == nil {return fmt.Errorf("no recList supplied!\n")}
+
+	// token  is Token.Value
+   	api, err := cloudflare.NewWithAPIToken(token)
+    if err != nil {return fmt.Errorf("initiating api obj: %v",err)}
+
+    ctx := context.Background()
+
+
+    rc := cloudflare.ResourceContainer{
+		Level: cloudflare.ZoneRouteLevel,
+//        Identifier: param.ZoneID,
+    }
+
+
+
+
+	for i:=0; i< len(*recList); i++ {
+
+		param := cloudflare.CreateDNSRecordParams{}
+
+		rec := (*recList)[i]
+		param.Type = rec.Type
+		param.Name = rec.Name
+		param.Content = rec.Content
+		param.ZoneID = rec.ZoneId
+		param.TTL = rec.TTL
+
+		rc.Identifier = rec.ZoneId
+
+		cfDnsRec, err := api.CreateDNSRecord(ctx, &rc, param)
+		if err != nil {return fmt.Errorf("CreateDnsRec: %v", err)}
+
+		mrec:= rec
+		mrec.ID = cfDnsRec.ID
+		mrec.CreatedOn = cfDnsRec.CreatedOn
+		mrec.ModifiedOn = cfDnsRec.ModifiedOn
+		(*recList)[i] = mrec
+	}
+	return nil
 }
 
 func AddDnsChalRecord(zoneId, val, token string)(recId string, err error) {
@@ -316,10 +388,14 @@ type UpdateDNSRecordParams struct {
 }
 
 
-func DelDnsRecord(zoneId, recId, token string) (err error) {
+func DelDnsRecord(rec DnsRec, token string) (err error) {
+
+	zoneId := rec.ZoneId
+	recId := rec.ID
 
 	if len(token) == 0 {return fmt.Errorf("no token supplied")}
 	if len(zoneId) == 0 {return fmt.Errorf("no zoneId supplied")}
+	if len(recId) == 0 {return fmt.Errorf("no recId supplied")}
 	// token  is Token.Value
    	api, err := cloudflare.NewWithAPIToken(token)
     if err != nil {return fmt.Errorf("initiating api obj: %v",err)}
